@@ -5,12 +5,15 @@
         <p>{{ c.title }}</p>
     </div> -->
 
+    <router-link to="/type">Tipos</router-link>
+
     <div v-if="categories">
         <img :src="categories" alt="Imagen de categoría"/>
     </div>
     <div v-else>
         <p>Cargando...</p>
     </div>
+
 </template>
 <script>
 export default {
@@ -27,4 +30,5 @@ export default {
         })
     }
 }
+
 </script>

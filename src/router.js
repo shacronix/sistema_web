@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router"
 
 import ListCategory from "./pages/ListCategory.vue"
-import HelloWorld from "./components/HelloWorld.vue"
+import ListType from "./pages/ListType.vue"
 
 const routes = [
     {
-        name: 'list',
+        name: 'list-category',
         path: '/',
         component: ListCategory
     },
     {
-        name: 'hello-world',
-        path: '/hello-world',
-        component: HelloWorld
+        name: 'list-type',
+        path: '/type',
+        component: ListType
     }
 ]
 
