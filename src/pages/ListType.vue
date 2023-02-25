@@ -1,7 +1,7 @@
 <template>
     <h1>Listado Categorías</h1>
 
-    <router-link to="/">Categorías</router-link>
+    <router-link :to="{ name: 'list-category' }">Categorías</router-link>
 
     <div v-if="categories">
         <img :src="categories" alt="Imagen de categoría" />

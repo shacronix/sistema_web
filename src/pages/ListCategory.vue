@@ -5,7 +5,7 @@
         <p>{{ c.title }}</p>
     </div> -->
 
-    <router-link to="/type">Tipos</router-link>
+    <router-link :to="{ name: 'list-type' }">Categorías</router-link>
 
     <div v-if="categories">
         <img :src="categories" alt="Imagen de categoría"/>
