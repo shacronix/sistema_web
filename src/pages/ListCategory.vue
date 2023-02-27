@@ -14,6 +14,8 @@
         <p>Cargando...</p>
     </div>
 
+    <n-button>naive-ui</n-button>
+
 </template>
 <script>
 export default {
