@@ -5,7 +5,7 @@
         <p>{{ c.title }}</p>
     </div> -->
 
-    <router-link :to="{ name: 'list-type' }">Categorías</router-link>
+    <router-link :to="{ name: 'list-type' }">Tipos</router-link>
 
     <div v-if="categories">
         <img :src="categories" alt="Imagen de categoría"/>
@@ -14,7 +14,8 @@
         <p>Cargando...</p>
     </div>
 
-    <n-button>naive-ui</n-button>
+    <n-button ghost color="#0d6efd"> <game-controller-outline />botón de prueba</n-button>
+    
 
 </template>
 <script>
