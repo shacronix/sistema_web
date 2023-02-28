@@ -4,7 +4,7 @@
   <n-layout has-sider>
     <n-layout-sider content-style="padding: 24px;">
 
-
+      <h1>hola</h1>
 
     </n-layout-sider>
     <n-layout>

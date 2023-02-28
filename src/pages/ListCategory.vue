@@ -1,37 +1,49 @@
 <template>
-    <h1>Listado Categorías</h1>
+    <div>
+        <h1>Listado Categorías</h1>
+        <router-link :to="{ name: 'list-type' }">Tipos</router-link>
 
-    <!-- <div v-for="c in categories" :key="c.id">
-        <p>{{ c.title }}</p>
-    </div> -->
-
-    <router-link :to="{ name: 'list-type' }">Tipos</router-link>
-
-    <div v-if="categories">
-        <img :src="categories" alt="Imagen de categoría"/>
+        <form @submit.prevent="submitForm">
+            <label>
+                Campo 1:
+                <input type="text" v-model="email">
+            </label>
+            <br>
+            <label>
+                Campo 2:
+                <input type="text" v-model="password">
+            </label>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-    <div v-else>
-        <p>Cargando...</p>
-    </div>
-
-    <n-button ghost color="#0d6efd"> <game-controller-outline />botón de prueba</n-button>
-    
-
 </template>
 <script>
 export default {
-    data(){
-        return{
-            categories:[]
+    data() {
+        return {
+            email: '',
+            password: '',
         }
     },
-    mounted(){
-        this.$axios.get("https://aws.random.cat/meow?ref=apilist.fun")
-        .then((res)=>{
-            console.log(res.data.file)
-            this.categories = res.data.file
-        })
-    }
-}
+    methods: {
+        submitForm() {
+            const data = {
+                email: this.email,
+                password: this.password,
+            };
 
+            this.$axios.post('http://192.168.1.201:8000/api/login', data)
+                .then((res) => {
+                    console.log(res.data);
+                    // ...
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+
+        },
+    },
+}
 </script>
+
