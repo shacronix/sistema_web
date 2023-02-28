@@ -2,12 +2,12 @@ import { createApp } from 'vue'
 //NAIVE UI
 import naive from 'naive-ui'
 
-//AXIOS
-import axios from "axios"
-
 //RUTAS DE NAGEVACIÓN - ROUTER
 import App from './App.vue'
 import router from './router'
+
+//AXIOS
+import axios from 'axios';
 
 const app = createApp(App)
 

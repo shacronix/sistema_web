@@ -237,7 +237,7 @@ export default defineComponent({
 .input {
     width: 100%;
     max-width: 220px;
-    height: 8px;
+    height: 34px;
     padding: 12px;
     border-radius: 12px;
     border: 1.5px solid lightgrey;
