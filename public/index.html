@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    ALVISA
+  </title>
+
+  <!--Morris Chart CSS -->
+  <link rel="stylesheet" href="./assets/css/morris.css">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="./assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+  <link href="./assets/css/icons.css" rel="stylesheet" type="text/css">
+  <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+  <!-- jQuery  -->
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/metismenu.min.js"></script>
+  <script src="./assets/js/jquery.slimscroll.js"></script>
+  <script src="./assets/js/waves.min.js"></script>
+  <!--Morris Chart-->
+  <script src="./assets/js/morris.min.js"></script>
+  <script src="./assets/js/raphael.min.js"></script>
+  <script src="./assets/js/dashboard.init.js"></script>
+  <!-- App js -->
+  <script src="./assets/js/app.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
