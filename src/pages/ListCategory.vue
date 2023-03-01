@@ -3,47 +3,43 @@
         <h1>Listado Categorías</h1>
         <router-link :to="{ name: 'list-type' }">Tipos</router-link>
 
-        <form @submit.prevent="submitForm">
-            <label>
-                Campo 1:
-                <input type="text" v-model="email">
-            </label>
-            <br>
-            <label>
-                Campo 2:
-                <input type="text" v-model="password">
-            </label>
-            <br>
-            <button type="submit">Enviar</button>
-        </form>
+    </div>
+
+    <div>
+        <label>Token:</label> {{ token }}
+    </div>
+
+    <div>
+        <button @click="obtenerDatos">Obtener datos</button>
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            email: '',
-            password: '',
+            token: ''
         }
     },
-    methods: {
-        submitForm() {
-            const data = {
-                email: this.email,
-                password: this.password,
-            };
-
-            this.$axios.post('http://192.168.1.201:8000/api/login', data)
-                .then((res) => {
-                    console.log(res.data);
-                    // ...
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-
-        },
+    mounted() {
+        const token = JSON.parse(localStorage.getItem('token'))
+        this.token = token
     },
+    methods: {
+        obtenerDatos() {
+            const token = JSON.parse(localStorage.getItem('token_autorization'))
+            this.$axios.get('http://192.168.1.201:8000/api/roles_permissions', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+                .then(response => {
+                    console.log(response)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+    }
 }
 </script>
 

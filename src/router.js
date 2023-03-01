@@ -1,32 +1,43 @@
+//PARA USAR LAS RUTAS
 import { createRouter, createWebHistory } from "vue-router"
 
+//MIS COMPONENETES
 import InicioSesion from "./pages/InicioSesion/InicioSesion.vue"
-
-
+import LayoutPrincipal from "./pages/LayoutPrincipal/LayoutPrincipal.vue"
 import ListCategory from "./pages/ListCategory.vue"
 import ListType from "./pages/ListType.vue"
 
+
 const routes = [
     {
-        name: 'list-category',
-        path: '/Categorias',
-        component: ListCategory
+        path: '/',
+        component: InicioSesion,
     },
     {
-        name: 'list-type',
-        path: '/Tipos',
-        component: ListType
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: LayoutPrincipal,
+      children: [
+        {
+          name: 'list-category',
+          path: '/Categorias',
+          component: ListCategory,
+        },
+        {
+          path: '/Tipos',
+          name: 'list-type',
+          component: ListType,
+        },
+      ]
     },
-    {
-        name: 'inicio_sesion',
-        path: '/InicioSesion',
-        component: InicioSesion
-    }
+    
+    
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     routes: routes
 })
+
 
 export default router

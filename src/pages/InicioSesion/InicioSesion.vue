@@ -37,6 +37,7 @@
             <span>INICIAR SESIÓN</span>
         </button>
 
+
     </form>
 </template>
 
@@ -49,23 +50,26 @@ export default {
         }
     },
     methods: {
-        submitForm() {
-            const data = {
+        async submitForm() {
+            var payload = {
                 email: this.email,
                 password: this.password,
             };
 
-            this.$axios.post('http://192.168.1.201:8000/api/login', data)
-                .then((res) => {
-                    console.log(res.data);
+            await this.$axios.post('/login', payload)
+                .then((respuesta) => {
+                    console.log(respuesta);
+                    this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + respuesta.token;
+                    // localStorage.setItem('token', JSON.stringify(respuesta.data.token))
+                    this.$router.push('/dashboard')
                     // ...
                 })
-                .catch((err) => {
-                    console.error(err);
+                .catch((error) => {
+                   alert('usuario no encontrado conchatumadre', error);
                 });
 
         },
-    },
+    }
 }
 </script>
 
